@@ -1,29 +1,27 @@
-public class Start {
-	class inner {
-		public inner(){
-			System.out.print("ÄÚ²¿Àà ¹¹Ôì\n");
-		}
-		public void run(){
-			System.out.print("ÄÚ²¿Àà run ·½·¨\n");
-		}
-	}
-	public Start(){
-		System.out.print("ÕâÊÇ¹¹Ôì·½·¨\n");
-	}
-	
-	protected void finalize(){
-		System.out.print("ÕâÊÇÎö¹¹·½·¨\n");
-	}
-	
-	static void run() {
-		System.out.print("run ·½·¨\n");
-	}
 
+class Person{
+	public Person(){
+		System.out.println("æˆ‘æ˜¯ä¸€ä¸ªäºº");
+	}
+	public void say(){
+		System.out.println("ä¸€ä¸ªäººæ­£åœ¨è¯´è¯");
+	}
+}
+class Student extends Person{
+		public Student(){
+			System.out.println("æˆ‘ç»§æ‰¿ä¸Žä¸€ä¸ªäºº");
+		}
+		public void say(){
+			super.say();
+			System.out.println("æˆ‘åœ¨è¯´è¯");
+		}
+	
+}
+
+public class Start {
 	public static void main(String[] args) {
-		Start a=new Start();
-		Start.inner b=a.new inner();
-		b.run();
-		System.gc();
+		Student s=new Student();
+		s.say();
 	}
 
 }
