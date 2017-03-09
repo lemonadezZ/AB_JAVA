@@ -1,6 +1,3 @@
-/**
- * Created by jingz on 2017/3/9.
- */
 package person;
 
 public class Person{
