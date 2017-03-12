@@ -4,8 +4,15 @@ import java.util.Stack;
  * Created by jingz on 2017/3/12.
  */
 public class Test2 {
+    public Test2(){
+        System.out.println("这是构造类");
+    }
+
     String name="Test2";
     static public class Sinner{
+        static {
+
+        }
         public void say(){
             System.out.println("我是精通内部类的方法");
         }
@@ -25,6 +32,7 @@ public class Test2 {
         }
     }
     static public  void main(String []argv){
+
         Test2.Sinner si1=new Test2.Sinner();
         si1.say();
         Test2.Sinner.says();
@@ -47,6 +55,18 @@ public class Test2 {
             i.show();
             i.say("这是什么鬼东西");
             Test2 t2=new Test2();
+
+            //匿名类
+            Test2 f =  new Test2()
+            {
+                {
+                    System.out.println("我是匿名内部类的初始化");
+                }
+                public void say1(){
+                    System.out.println("我是匿名内部类");
+                }
+            };
+
             Test2.Inner i1=t2.new Inner();
             i1.say("这次应该对了");
             i1.show();
